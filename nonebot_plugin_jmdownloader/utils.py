@@ -46,7 +46,7 @@ async def get_photo_info_async(client: JmcomicClient, photo_id):
 def download_photo(client: JmcomicClient, downloader: JmDownloader, photo: JmPhotoDetail):
     try:
         with downloader as dler:
-            dler.download_by_photo_detail(photo, client)
+            dler.download_by_photo_detail(photo)
         return True
     except JmcomicException as e:
         logger.error(f"JMComic 下载失败: {e}")
